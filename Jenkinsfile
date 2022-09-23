@@ -14,8 +14,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'env'
-                sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -v  && sleep 3'
+                // sh 'env'
+                // sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') {
