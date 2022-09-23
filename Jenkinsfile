@@ -2,10 +2,10 @@
 //     System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400"); 
 // }
 pipeline {
-
+    // agent { dockerfile true }
     agent {
         docker {
-            image 'maven:3.5.3-alpine'
+            image 'maven:3.5.4-alpine'
             // args '-v /root/.m2:/root/.m2'
             // args '-v $HOåME/.m2:/root/.m2'
             args '-v /tmp/jenkins/.m2:/root/.m2'
