@@ -51,6 +51,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'mvn -v  && sleep 3'
             }
         }
         stage('Test') {
