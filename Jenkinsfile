@@ -38,30 +38,43 @@
 // }
 
 
+// pipeline {
+//     agent {
+//         docker {
+//             image 'maven:3.5.4-alpine'
+//             // args '-v /root/.m2:/root/.m2'
+//             // args '-v $HOåME/.m2:/root/.m2'
+//             args '-v /tmp/jenkins/.m2:/root/.m2'
+//         }
+//     }
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo 'Building..'
+//                 sh 'mvn -v  && sleep 3'
+//             }
+//         }
+//         stage('Test') {
+//             steps {
+//                 echo 'Testing..'
+//             }
+//         }
+//         stage('Deploy') {
+//             steps {
+//                 echo 'Deploying....'
+//             }
+//         }
+//     }
+// }
+
 pipeline {
     agent {
-        docker {
-            image 'maven:3.5.4-alpine'
-            // args '-v /root/.m2:/root/.m2'
-            // args '-v $HOåME/.m2:/root/.m2'
-            args '-v /tmp/jenkins/.m2:/root/.m2'
-        }
+        docker { image 'node:7-alpine' }
     }
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-                sh 'mvn -v  && sleep 3'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'node --version'
             }
         }
     }
