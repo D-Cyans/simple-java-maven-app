@@ -70,7 +70,8 @@
 pipeline {
     agent {
         docker {
-            image 'node:7-alpine'
+            // image 'node:7-alpine'
+            image 'node:lts-alpine3.15'
             args '--entrypoint="" --platform="arm64"'
         }
     }
