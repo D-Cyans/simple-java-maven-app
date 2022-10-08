@@ -71,7 +71,7 @@ pipeline {
     agent {
         docker {
             image 'node:7-alpine'
-            args '--entrypoint=""'
+            args '--entrypoint="" --platform="arm64"'
         }
     }
     stages {
